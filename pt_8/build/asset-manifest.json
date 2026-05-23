@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.97344721.css",
+    "main.js": "/static/js/main.6968d9c7.js",
+    "static/js/453.4eaa1474.chunk.js": "/static/js/453.4eaa1474.chunk.js",
+    "static/media/ROG_Zephyrus.jpeg": "/static/media/ROG_Zephyrus.55fd83ef7e3e014170c6.jpeg",
+    "static/media/Huawei_Matebook_X_Pro.png": "/static/media/Huawei_Matebook_X_Pro.bf9fa1101f2d7d8d3b13.png",
+    "static/media/Macbook_Pro.png": "/static/media/Macbook_Pro.53d1615b22e80b738001.png",
+    "static/media/Microsoft-Surface-Laptop-Studio.jpeg": "/static/media/Microsoft-Surface-Laptop-Studio.027a7845f229e67cca79.jpeg",
+    "static/media/Macbook_Air.jpeg": "/static/media/Macbook_Air.e4e69906e29bd6a40a22.jpeg",
+    "static/media/XPS_13.jpg": "/static/media/XPS_13.17d3b3fd34a0bc5ddb41.jpg",
+    "static/media/ROG_Zephyrus_3.jpeg": "/static/media/ROG_Zephyrus_3.c28da24779d95dad4c8a.jpeg",
+    "static/media/HP_Spectre_x360.jpeg": "/static/media/HP_Spectre_x360.98dc04eb83c4924f82b8.jpeg",
+    "static/media/ROG_Zephyrus_2.jpeg": "/static/media/ROG_Zephyrus_2.ac38fdb6e0e58a660b0d.jpeg",
+    "static/media/Alienware_Area_51m_R2.jpeg": "/static/media/Alienware_Area_51m_R2.c95f04b3de1504f43ef8.jpeg",
+    "static/media/MSI_Stealth_16_Studio.jpeg": "/static/media/MSI_Stealth_16_Studio.9e0380ec05767b18b1b8.jpeg",
+    "static/media/Samsung_Galaxy_Book4_Ultra.jpeg": "/static/media/Samsung_Galaxy_Book4_Ultra.f0c1fbcf12f0fec4fcdf.jpeg",
+    "static/media/ROG_Zephyrus_1.jpeg": "/static/media/ROG_Zephyrus_1.01ae6dc3ca718fe2504c.jpeg",
+    "static/media/Lenovo_ThinkPad_X1.jpg": "/static/media/Lenovo_ThinkPad_X1.ab41b07721ad9f7e6cdd.jpg",
+    "index.html": "/index.html",
+    "main.97344721.css.map": "/static/css/main.97344721.css.map",
+    "main.6968d9c7.js.map": "/static/js/main.6968d9c7.js.map",
+    "453.4eaa1474.chunk.js.map": "/static/js/453.4eaa1474.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97344721.css",
+    "static/js/main.6968d9c7.js"
+  ]
+}
