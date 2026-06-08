@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.97344721.css",
-    "main.js": "/static/js/main.6968d9c7.js",
+    "main.js": "/static/js/main.83786d53.js",
     "static/js/453.4eaa1474.chunk.js": "/static/js/453.4eaa1474.chunk.js",
     "static/media/ROG_Zephyrus.jpeg": "/static/media/ROG_Zephyrus.55fd83ef7e3e014170c6.jpeg",
     "static/media/Huawei_Matebook_X_Pro.png": "/static/media/Huawei_Matebook_X_Pro.bf9fa1101f2d7d8d3b13.png",
@@ -19,11 +19,11 @@
     "static/media/Lenovo_ThinkPad_X1.jpg": "/static/media/Lenovo_ThinkPad_X1.ab41b07721ad9f7e6cdd.jpg",
     "index.html": "/index.html",
     "main.97344721.css.map": "/static/css/main.97344721.css.map",
-    "main.6968d9c7.js.map": "/static/js/main.6968d9c7.js.map",
+    "main.83786d53.js.map": "/static/js/main.83786d53.js.map",
     "453.4eaa1474.chunk.js.map": "/static/js/453.4eaa1474.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.97344721.css",
-    "static/js/main.6968d9c7.js"
+    "static/js/main.83786d53.js"
   ]
 }

@@ -1,9 +1,9 @@
-import { Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { useMemo, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { tTasks } from "../quizData";
-import SortableList from "./SortableList";
-import { addList } from './quizSlice';
+import { Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
+import { useEffect, useMemo } from 'react'
+import { useDispatch } from 'react-redux'
+import { tTasks } from "../quizData"
+import SortableList from "./SortableList"
+import { addList } from './quizSlice'
 
 interface ComponentProps {
     index: number;
@@ -15,7 +15,6 @@ function Matching({index, tasks}: ComponentProps) {
 
   const answers = useMemo(() => {
     const arr = tasks.map(task => task.answer);
-    // Простой алгоритм случайного перемешивания Фишера-Йетса или sort
     return arr.sort(() => Math.random() - 0.5);
   }, [tasks]);
 

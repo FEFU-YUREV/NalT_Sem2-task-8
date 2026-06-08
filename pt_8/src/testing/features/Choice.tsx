@@ -2,14 +2,15 @@ import { Box, Checkbox, FormControl, FormControlLabel, FormGroup, Radio, RadioGr
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setChoiceAnswer } from './quizSlice';
+import { tTasks } from '../quizData';
 
 interface ComponentProps {
     index: number;
-    options: string[];
+    tasks: tTasks;
     multiple?: boolean;
 }
 
-function Choice({index, options, multiple}: ComponentProps) {
+function Choice({index, tasks, multiple}: ComponentProps) {
   const dispatch = useDispatch();
   const [selected, setSelected] = useState<string[]>([]);
 
@@ -33,22 +34,22 @@ function Choice({index, options, multiple}: ComponentProps) {
         <FormControl component="fieldset">
             {multiple ? (
                 <FormGroup>
-                    {options.map((opt, i) => (
+                    {tasks.map((opt, i) => (
                         <FormControlLabel
                             key={i}
-                            control={<Checkbox checked={selected.includes(opt)} onChange={handleChange} value={opt} />}
-                            label={opt}
+                            control={<Checkbox checked={selected.includes(opt.question)} onChange={handleChange} value={opt.question} />}
+                            label={opt.question}
                         />
                     ))}
                 </FormGroup>
             ) : (
                 <RadioGroup value={selected[0] || ''} onChange={handleChange}>
-                    {options.map((opt, i) => (
+                    {tasks.map((opt, i) => (
                         <FormControlLabel
                             key={i}
-                            value={opt}
+                            value={opt.question}
                             control={<Radio />}
-                            label={opt}
+                            label={opt.question}
                         />
                     ))}
                 </RadioGroup>

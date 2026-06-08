@@ -1,11 +1,11 @@
-import { Box, Button, Container, Typography } from '@mui/material';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
-import { quiz } from "../quizData";
-import Matching from "./Matching";
-import Sorting from "./Sorting";
-import Choice from "./Choice";
+import { Box, Button, Container, Typography } from '@mui/material'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
+import { quiz } from "../quizData"
+import Choice from "./Choice"
+import Matching from "./Matching"
+import Sorting from "./Sorting"
 
 function Quiz() {
   const lists = useSelector((state: RootState) => state.lists.lists);
@@ -36,18 +36,18 @@ function Quiz() {
                  }
              });
          }
-      } else if (item.type === 'C') {
-         if (item.multiple) {
-            const correctAnswer = item.answer as string[];
-            const userAnswer = currentList as string[];
-            // check if length is the same and every selected answer is in the correct answer array
-            if (correctAnswer.length === userAnswer.length && userAnswer.every(ans => correctAnswer.includes(ans))) {
-                correct = 1;
-            }
-         } else {
-             if (currentList[0] === item.answer) {
-                 correct = 1;
-             }
+      } else if (item.type === 'SC') {
+         const selectedOpt = item.tasks?.find(task => task.question === currentList[0]);
+         if (selectedOpt && selectedOpt.answer === "1") {
+             correct = 1;
+         }
+      } else if (item.type === 'MC') {
+         const isCorrect = item.tasks?.every(task => {
+             const isSelected = currentList.includes(task.question);
+             return task.answer === "1" ? isSelected : !isSelected;
+         });
+         if (isCorrect) {
+             correct = 1;
          }
       }
       return correct;
@@ -72,7 +72,13 @@ function Quiz() {
           </Typography>
           {item.type === 'M' && item.tasks && <Matching index={index} tasks={item.tasks} />}
           {item.type === 'S' && item.tasks && <Sorting index={index} tasks={item.tasks} />}
-          {item.type === 'C' && item.options && <Choice index={index} options={item.options} multiple={item.multiple} />}
+          {(item.type === 'SC' || item.type === 'MC') && item.tasks && (
+              <Choice 
+                  index={index} 
+                  tasks={item.tasks} 
+                  multiple={item.type === 'MC'} 
+              />
+          )}
         </Box>
         ))}
       <Box sx={{ display: 'flex', justifyContent:'center', gap: 3, mt: 4 }}>
@@ -88,7 +94,7 @@ function Quiz() {
              const allCorrect = score === maxScore;
              return (
                <Typography key={index} variant="body1" sx={{ color: allCorrect ? 'success.main' : 'error.main', mb: 1 }}>
-                 Задание {index + 1}. {allCorrect ? 'Верно.' : (quiz[index].type === 'C' ? 'Неверно.' : `Верных ответов: ${score} из ${maxScore}.`)}
+                 Задание {index + 1}. {allCorrect ? 'Верно.' : ((quiz[index].type === 'SC' || quiz[index].type === 'MC') ? 'Неверно.' : `Верных ответов: ${score} из ${maxScore}.`)}
                </Typography>
              );
           })}

@@ -9,6 +9,8 @@ function Quiz() {
   const lists = useSelector((state: RootState) => state.lists.lists);
   const [results, setResults] = useState<number[] | null>(null);
   const [resetKey, setResetKey] = useState(0);
+  const totalCorrect = results?.reduce((sum, score) => sum + score, 0) ?? 0;
+  
 
   const handleCheck = () => {
     const newResults = quiz.map((item, index) => {
@@ -41,14 +43,17 @@ function Quiz() {
           <Matching index={index} tasks={item.tasks} />
         </Box>
         ))}
-      <Box sx={{ display: 'flex', justifyContent:'space-around', mt: 4 }}>
+      <Box sx={{ display: 'flex', justifyContent:'space-around', mt: 4 , padding: 4}}>
         <Button variant="contained" onClick={handleCheck}>Проверить</Button>
         <Button variant="contained" onClick={handleRestart}>Начать снова</Button>
       </Box>
 
       {results && (
-        <Box sx={{ mt: 4, textAlign: 'center' }}>
+        <Box sx={{ mt: 4, textAlign: 'center', padding: 4}}>
           <Typography variant="h5" gutterBottom>Результаты теста</Typography>
+          <Typography variant="h6" gutterBottom>
+            Итого правильных: {totalCorrect} из 9
+          </Typography>
           {results.map((score, index) => {
              const allCorrect = score === quiz[index].tasks.length;
              return (

@@ -5,12 +5,10 @@ export type tTasks = {
 
 export type tQuizzes = {
     id: number,
-    type: "M" | "S" | "C", // M - Matching, S - Sorting, C - Choice (Single/Multiple)
+    type: "M" | "S" | "SC" | "MC", // M - Matching, S - Sorting, SC - Single Choice, MC - Multiple Choice
     title: string,
-    tasks?: tTasks, // for Matching and Sorting
-    options?: string[], // for Choice
-    answer?: string | string[], // for Choice and Sorting
-    multiple?: boolean, // for Choice
+    tasks?: tTasks, // for Matching, Sorting, SC and MC
+    answer?: string | string[], // for Sorting
 }[];
 
 export const quiz: tQuizzes = [
@@ -100,29 +98,25 @@ export const quiz: tQuizzes = [
   },
   {
     id: 5,
-    type: "C",
+    type: "SC",
     title: "Какой из представленных ноутбуков имеет OLED-экран?",
-    options: [
-        "MacBook Air M4",
-        "Samsung Galaxy Book4 Ultra",
-        "Lenovo ThinkPad X1 Carbon",
-        "Dell XPS 13"
-    ],
-    answer: "Samsung Galaxy Book4 Ultra",
-    multiple: false
+    tasks: [
+        { question: "MacBook Air M4", answer: "0" },
+        { question: "Samsung Galaxy Book4 Ultra", answer: "1" },
+        { question: "Lenovo ThinkPad X1 Carbon", answer: "0" },
+        { question: "Dell XPS 13", answer: "0" }
+    ]
   },
   {
     id: 6,
-    type: "C",
+    type: "MC",
     title: "Выберите все игровые ноутбуки из списка.",
-    options: [
-        "Asus ROG Zephyrus G14",
-        "MacBook Air M4",
-        "Alienware Area-51m R2",
-        "Huawei MateBook X Pro",
-        "MSI Stealth 16 AI Studio"
-    ],
-    answer: ["Asus ROG Zephyrus G14", "Alienware Area-51m R2", "MSI Stealth 16 AI Studio"],
-    multiple: true
+    tasks: [
+        { question: "Asus ROG Zephyrus G14", answer: "1" },
+        { question: "MacBook Air M4", answer: "0" },
+        { question: "Alienware Area-51m R2", answer: "1" },
+        { question: "Huawei MateBook X Pro", answer: "0" },
+        { question: "MSI Stealth 16 AI Studio", answer: "1" }
+    ]
   }
 ]

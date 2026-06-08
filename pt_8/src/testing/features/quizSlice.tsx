@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface ListsState {
-  lists: (string | string[])[][]; // can store array of strings for matching/sorting, and array containing a single string/array of strings for choice
+  lists: (string | string[])[][]; 
 }
 
 const initialState: ListsState = {
